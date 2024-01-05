@@ -1,0 +1,126 @@
+ {
+      title: (
+        <div style={{ letterSpacing: "1.4px", textAlign: "center" }}>
+      ID
+        </div>
+      ),
+      dataIndex: "id",
+      align: "center",
+      width: "9vw",
+      
+      ...getColumnSearchProps("id"),
+      render: (text, record) => {
+        if (isnewrecord && record.key === newRow.key) {
+          console.log("NewRecord TradeGroup");
+          return (
+            <Input
+              value={newRow.id}
+              placeholder="ID"
+           disabled
+              style={{
+                textAlign: "center",
+                width: "60%",
+                letterSpacing: "1.2px",
+              }}
+              onChange={(e) => {
+                if (e.target.value.length <= 9) {
+                  handleNewRowChange("id", e.target.value);
+                }
+              }}
+            />
+          );
+        } else if (editedRecord && editedRecord.id === record.id) {
+          console.log("EditRecord TradeGroup");
+          return (
+            <Input
+              value={editedRecord.id}
+              placeholder="TradeGroup"
+              disabled
+              style={{
+                textAlign: "center",
+                width: "60%",
+                letterSpacing: "1.2px",
+              }}
+              onChange={(e) => {
+                if (e.target.value.length <= 9) {
+                  handleEditFieldChange("id", e.target.value);
+                }
+              }}
+            />
+          );
+        } else {
+          return <div style={{ letterSpacing: "1px" }}>{text}</div>;
+        }
+      },
+    },
+
+
+
+
+
+
+
+
+delivery term:
+ {
+      title: (
+        <div style={{ letterSpacing: "1.4px", textAlign: "center" }}>
+       ID
+        </div>
+      ),
+      dataIndex: "id",
+      align: "center",
+      width: "20vw",
+      ...getColumnSearchProps("id"),
+      render: (text, record) => {
+        if (isnewrecord && record.key === newRow.key) {
+          console.log("NewRecord Deliverytermcode");
+          return (
+            <Input
+              value={newRow.id}
+            disabled
+              placeholder=""
+              style={{
+                textAlign: "center",
+                width: "15vw",
+                letterSpacing: "1.2px",
+              }}
+              onChange={(e) => {
+                if (e.target.value.length <= 9) {
+                  handleNewRowChange("id", e.target.value);
+                }
+              }}
+            />
+          );
+        } else if (editedRecord && editedRecord.id === record.id) {
+          console.log("EditRecord Deliverytermcode");
+          return (
+            <Input
+              value={editedRecord.id}
+              placeholder="Delivery term code"
+              disabled
+              style={{
+                textAlign: "center",
+                width: "60%",
+                letterSpacing: "1.2px",
+              }}
+              onChange={(e) => {
+                if (e.target.value.length <= 9) {
+                  handleEditFieldChange("id", e.target.value);
+                }
+              }}
+            />
+          );
+        } else {
+          return <div style={{ letterSpacing: "1px" }}>{text}</div>;
+        }
+      },
+    },
+
+
+
+
+
+
+
+     
